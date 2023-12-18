@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    :root{
+        --foreground: 209, 100%, 94%;
+        --background: 14, 51%, 73%;
+        --background_bottom: 14, 45%, 56%;
+        --card_background: 40, 98%, 66%;
+        --card_foreground: 239, 34%, 12%;
+        --top_backgroundStart:14, 45%, 64%;
+        --top_backgroundFinish: 47, 49%, 72%;
+    }
+}
+@layer components{
+
+
+    .outerEllipse{
+        @apply fill-[url(#GradientBackground)];
+    }
+    .btnStyle{
+        @apply px-1 bg-white/10 rounded-md hover:bg-white/20 transition-all active:scale-95;
+    }
+    @keyframes move-it {
+        0% {
+            background-position: initial;
+        }
+        100% {
+            background-position: 100px 0px;
+        }
+    }
+
+    .bgLoop {  
+        background: repeating-linear-gradient(
+        45deg,
+        #dda797,
+        #dda797 5%,
+        #a37365 5%,
+        #a37365 10%
+        );
+        background-size: 100px 100px;
+        opacity: 0.1;
+        animation: move-it 25s linear infinite;
+    }
+}
